@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, input, output, signal } from '@angular/core';
 
 @Component({
   selector: 'app-user-input',
@@ -8,5 +8,10 @@ import { Component } from '@angular/core';
   styleUrl: './user-input.component.css'
 })
 export class UserInputComponent {
+  initialInvestment = signal<string>('')
+  annualInvestment = signal<string>('')
+  expectedReturn = signal<string>('')
+  duration = signal<string>('')
 
+  onCalculate = output<() => void>();
 }
